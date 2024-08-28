@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body> <section class="logs">
+    <nav>
+        <div class="hh">
+            <a href="index.html"><img src = "https://i.postimg.cc/9M3P0KHX/22931313-transparent.png"></a></div>
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <a href="login.html">LOGIN</a>
+                </li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contactus.html">CONTACT</a></li> 
+            </ul>
+        </div>
+    </nav>
+    <div class="form-box">
+<div class="button-box">
+    <div id="btn"></div>
+    <button type="button" class="toggle-button" onclick="login()">Log in</button>
+    <button type="button" class="toggle-button" onclick="register() ">register</button>
+</div>
+<div class="social-icons">
+    <a href="https://www.instagram.com/sem/campaign/emailsignup/?campaign_id=13530338610&extra_1=s|c|547419127631|e|instagram%20%27|&placement=&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1321618851291%26loc_physical_ms%3D1007785%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiA8t2eBhDeARIsAAVEga01Pevc6LogxGfSaQDzRk9Qb3TLS_G3E6E6V7BMgzjMNBlCKIal4tcaAtfgEALw_wcB"><img src="https://i.postimg.cc/FFM05dxk/instagram.png"></a>
+    <a href="https://www.facebook.com/campaign/landing.php?campaign_id=14884913640&extra_1=s%7Cc%7C589460569849%7Cb%7Cfacebook%20%27%7C&placement=&creative=589460569849&keyword=facebook%20%27&partner_id=googlesem&extra_2=campaignid%3D14884913640%26adgroupid%3D128696220912%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-327195741349%26loc_physical_ms%3D1007785%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQiA8t2eBhDeARIsAAVEga2fcvk6lDH5Ks19e3cZWyaxx-spgafyBJgMoNoRI419_ixyVnWf1A8aAv7VEALw_wcB"><img src="https://i.postimg.cc/htbj5xmP/facebook.png"></a>
+    <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><img src="https://i.postimg.cc/yxcgYjTg/twitter.png"></a>
+</div>
+<form id="login" class="input-group">
+    <input type="text" id="loginn" class="input-field" placeholder="user id" required>
+<input type="text" id="password" class="input-field" placeholder="Enter Password" required>
+<input type="checkbox" class="check-box"><span>Remember Password</span>
+<button type="submit" class="submit-btn" onclick="auth()">Log in</button>
+</form>
+<form id="register" class="input-group" action="#" method="post">
+    <input type="text" class="input-field" placeholder="user id" required name="fname">
+<input type="text" class="input-field" placeholder="Enter Password" required name="lname">
+<input type="email" class="input-field" placeholder="Email id" required name="email">
+<input type="checkbox" class="check-box"><span>I Agree to terms & Conditions</span>
+<button type="submit" class="submit-btn" name="register">Register</button>
+</form>
+    </div>
+    </section>
+</body>
+<!--{% if Enter password == 12345678 or user id == shiven1 %}<a href="job-page.html"></a> {else %}<a href="shaadi-com.html" ></a>{endif %}-->
+<script>
+var x=document.getElementById("login");
+var y=document.getElementById("register");
+var z=document.getElementById("btn");
+
+
+function register(){
+    x.style.left="-400px";
+    y.style.left="50px";
+    z.style.left="110px";
+}
+function login(){
+    x.style.left="50px";
+    y.style.left="450px";
+    z.style.left="0";
+}
+function auth(){
+var emaill = document.getElementById('loginn').value;
+var pasword = document.getElementById('password').value;
+if(emaill =='shiven@gmail.com'&& pasword=='shivendra123'){
+    window.location.assign("prototype/job-page.html");
+    window.location.href = "job-page.html";
+    alert('login successfully');
+}
+else{
+    alert('Invalid information');
+    return;
+}
+
+
+}
+</script>
+</html>
+<?php
+if($_post['register'])
+{
+   $firstname = $_post['fname'];
+   $lname = $_post['lname'];
+   $email = $_post['email'];
+   $upload = $_post['upload'];
+
+   INSERT INTO register values($firstname,$lname,$email,$upload);
+}
+?>
