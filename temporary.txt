@@ -1,0 +1,131 @@
+<ol id="list">
+            <li class="job" a href="#">Clerk</li>
+            <li class="job"> Data Entry Clerk</li>
+            <li class="job">Marketing Representative</li>
+            <li class="job"> Administrative Assistant</li>
+            <li class="job"> Appliance Technician</li>
+            <li class="job"> Copywriter</li>
+            <li class="job"> Diver</li>
+            <li class="job"> Coder</li>
+            <li class="job"> Electrician</li>
+            <li class="job"> Carpenter</li>
+            <li class="job">Postal-Service Mail Carrier</li>
+            <li class="job"> Driver</li>
+            <li class="job">Pharmacy Technician</li>
+            <li class="job">Bookkeeper</li>
+            <li class="job">Plumber</li>
+            <li class="job">Mechanic</li>
+            <li class="job">Insurance Agent</li>
+            <li class="job">Welder</li>
+            <li class="job">Dispatcher</li>
+            <li class="job">Phone Interviewer</li>
+           </ol>
+        </div>
+
+        javascript
+        // JavaScript code
+function search_job() {
+    let input = document.getElementById('search').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('job');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
+
+excessive
+ <script src="main.js"></script>
+    <div class="sick">
+     <a href="#" ><img src="C:\Users\Shivendra Pathak\Documents\jobby\com-logo-1.jpg">
+      <div class="sick-tee">
+      <h4>Shivendra industries pvt ltd</h4>
+      <p>Clerk fresher</p>
+      <p>MUMBAI</p>
+      <h5> 3.5-4 Lpa</h5>
+        </div>
+    </div>
+</a>-->
+
+
+   Since the release of the first novel, Harry Potter and the Philosopher's Stone, on 26 June 1997, the books 
+   have found immense popularity, positive reviews, and commercial success worldwide. They have attracted a
+   wide adult audience as well as younger readers and are widely considered cornerstones of modern literature.
+   [5][6] As of February 2023, the books have sold more than 600 million copies worldwide, making them the
+   best-selling book series in history, and have been available in 85 languages.[7] The last four books
+   consecutively set records as the fastest-selling books in history, with the final instalment selling
+   roughly 2.7 million copies in the United Kingdom and 8.3 million copies in the United States within 
+   twenty-four hours of its release.
+
+   The series was originally published in English by Bloomsbury in the United Kingdom and Scholastic
+   Press in the United States. All versions around the world are printed by Grafica Veneta in Italy.
+   [1] A series of many genres, including fantasy, drama, coming-of-age fiction, and the British school story
+   (which includes elements of mystery, thriller, adventure, horror, and romance), the world of Harry Potter
+   explores numerous themes and includes many cultural meanings and references.[2] According to Rowling,
+   the main theme is death.[3] Other major themes in the series include prejudice, corruption, and madness.[4]
+  
+
+   pdfjsLib.getDocument('./ahmed.pdf').then(doc => {
+        console.log("this file has" + doc._pdfInfo.numPages);
+    });
+
+    php code verification
+
+    <?php
+$statusMsg='';
+if(isset($_FILES["file"]["name"])){
+   $email = $_POST['email'];
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+$fromemail =  $email;
+$subject="Uploaded file attachment";
+$email_message = '<h2>Contact Request Submitted</h2>
+                    <p><b>Name:</b> '.$name.'</p>
+                    <p><b>Email:</b> '.$email.'</p>
+                    <p><b>Subject:</b> '.$subject.'</p>
+                    <p><b>Message:</b><br/>'.$message.'</p>';
+$email_message.="Please find the attachment";
+$semi_rand = md5(uniqid(time()));
+$headers = "From: ".$fromemail;
+$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+ 
+    $headers .= "\nMIME-Version: 1.0\n" .
+    "Content-Type: multipart/mixed;\n" .
+    " boundary=\"{$mime_boundary}\"";
+ 
+if($_FILES["file"]["name"]!= ""){  
+	$strFilesName = $_FILES["file"]["name"];  
+	$strContent = chunk_split(base64_encode(file_get_contents($_FILES["file"]["tmp_name"])));  
+	
+	
+    $email_message .= "This is a multi-part message in MIME format.\n\n" .
+    "--{$mime_boundary}\n" .
+    "Content-Type:text/html; charset=\"iso-8859-1\"\n" .
+    "Content-Transfer-Encoding: 7bit\n\n" .
+    $email_message .= "\n\n";
+ 
+ 
+    $email_message .= "--{$mime_boundary}\n" .
+    "Content-Type: application/octet-stream;\n" .
+    " name=\"{$strFilesName}\"\n" .
+    //"Content-Disposition: attachment;\n" .
+    //" filename=\"{$fileatt_name}\"\n" .
+    "Content-Transfer-Encoding: base64\n\n" .
+    $strContent  .= "\n\n" .
+    "--{$mime_boundary}--\n";
+}
+$toemail="info@webcure.co.in";	
+ 
+if(mail($toemail, $subject, $email_message, $headers)){
+   $statusMsg= "Email send successfully with attachment";
+}else{
+   $statusMsg= "Not sent";
+}
+}
+   ?>
